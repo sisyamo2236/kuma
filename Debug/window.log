@@ -1,0 +1,14 @@
+﻿  debug_font.cpp
+c:\users\saq\source\repos\hew\hew\window\debug_font.cpp(42): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+c:\users\saq\source\repos\hew\hew\window\debug_font.cpp(55): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+  debug_primitive.cpp
+  game.cpp
+c:\users\saq\source\repos\hew\hew\window\game.cpp(83): warning C4101: 'Sprite': ローカル変数は 1 度も使われていません。
+  main.cpp
+c:\users\saq\source\repos\hew\hew\window\main.cpp(294): warning C4101: 'hr': ローカル変数は 1 度も使われていません。
+  player.cpp
+c:\users\saq\source\repos\hew\hew\window\player.cpp(28): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\users\saq\source\repos\hew\hew\window\player.cpp(46): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+  sprite.cpp
+  コードを生成中...
+  window.vcxproj -> C:\Users\saq\source\repos\hew\HEW\Debug\window.exe
