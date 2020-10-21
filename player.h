@@ -63,7 +63,7 @@ public:
 	//ƒpƒ‰ƒ[ƒ^‘€ì
 	void LifeControll(int num);
 
-
+	float jump_currect;
 };
 
 #endif

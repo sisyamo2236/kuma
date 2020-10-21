@@ -13,7 +13,7 @@ public:
 	ability() {};
 	virtual ~ability() {};
 	//アクション（純粋仮想関数）
-	virtual void Action() = 0;
+	virtual void Action(chichan* pChichan) = 0;
 	
 };
 

@@ -17,7 +17,10 @@ private:
 	bool AvailableAbility[DOLLTYPE_MAX];//使用可能アビリティ
 	ability* pAbility[DOLLTYPE_MAX];
 
+	void AbilityAction();
+
 public:
+
 
 	//chichan();
 	chichan(D3DXVECTOR2 set_pos);

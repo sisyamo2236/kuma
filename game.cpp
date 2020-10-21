@@ -33,8 +33,7 @@
 		pChichan = new chichan(D3DXVECTOR2(SCREEN_WIDTH / 6, SCREEN_HEIGHT - 300));
 		pJudge = new Judge();
 		pBlock_manager = new block_manager();
-		pDoll = new doll(D3DXVECTOR2(SCREEN_WIDTH / 3, SCREEN_HEIGHT - 300),GORILLA);
-
+		pDoll = new doll(D3DXVECTOR2(SCREEN_WIDTH / 3, SCREEN_HEIGHT - 300),RABBIT);
 
 
 		//ブロック仮設置
@@ -43,8 +42,6 @@
 	
 		//pBlock_manager->SetBlock(SCREEN_WIDTH / 2, SCREEN_HEIGHT - 350);
 		pBlock_manager->SetBlock((SCREEN_WIDTH / 2) + 100.0f, SCREEN_HEIGHT - 350);
-
-		
 	
 	}
 

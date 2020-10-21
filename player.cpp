@@ -34,7 +34,7 @@ player::player() {
 	life = 1;
 	speed = PLAYER_SPEED;
 	isJump = true;
-
+	jump_currect = 1.0;
 }
 
 // ---------------------------------------------------------------------------
@@ -58,6 +58,7 @@ player::player(D3DXVECTOR2 s_pos) {
 	life = 1;
 	speed = PLAYER_SPEED;
 	isJump = true;
+	jump_currect = 1.0;
 }
 
 // ---------------------------------------------------------------------------
@@ -212,7 +213,7 @@ void player::Player_Z_Action() {
 // ---------------------------------------------------------------------------
 void player::Jump() {
 
-	vector_speed.y -= (JUMP_POWER + JUMP_CORRECT);
+	vector_speed.y -= (JUMP_POWER + JUMP_CORRECT) * jump_currect;
 	isJump = true;
 }
 

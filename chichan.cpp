@@ -108,6 +108,20 @@ void chichan::Update() {
 	}
 	vector_speed.x = 0.0f;
 
+	AbilityAction();
+
+}
+
+//アクションの実行
+void chichan::AbilityAction() {
+
+	for (int i = 0; i < DOLLTYPE_MAX; i++) {
+
+		if (AvailableAbility[i] == true) {
+			pAbility[i]->Action(this);
+		}
+
+	}
 
 }
 
