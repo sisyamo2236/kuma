@@ -1,1 +1,30 @@
-﻿  window.vcxproj -> C:\Users\syou2\source\repos\4\x64\Debug\window.exe
+﻿  abiity_gorilla.cpp
+  abiity_rabbit.cpp
+  ability_bird.cpp
+  block.cpp
+  block_manager.cpp
+  chichan.cpp
+c:\users\syou2\source\repos\ぬいぐるみ\window\chichan.cpp(91): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+  collision.cpp
+  debug_primitive.cpp
+  doll.cpp
+  fade.cpp
+  debug_font.cpp
+  game.cpp
+c:\users\syou2\source\repos\ぬいぐるみ\window\game.cpp(98): warning C4101: 'Sprite': ローカル変数は 1 度も使われていません。
+  judge.cpp
+  keyboard.cpp
+  key_manager.cpp
+  main.cpp
+c:\users\syou2\source\repos\ぬいぐるみ\window\main.cpp(259): warning C4101: 'hr': ローカル変数は 1 度も使われていません。
+  mouse.cpp
+  mydirect3d.cpp
+  player.cpp
+  sound.cpp
+  コードを生成中...
+  コンパイル中...
+  sprite.cpp
+  system_timer.cpp
+  texture.cpp
+  コードを生成中...
+  window.vcxproj -> C:\Users\syou2\source\repos\ぬいぐるみ\x64\Debug\window.exe

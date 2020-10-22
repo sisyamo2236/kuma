@@ -96,6 +96,9 @@
     <ClCompile Include="ability_bird.cpp">
       <Filter>ソース ファイル\アビリティ</Filter>
     </ClCompile>
+    <ClCompile Include="abiity_gorilla.cpp">
+      <Filter>ソース ファイル\アビリティ</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">

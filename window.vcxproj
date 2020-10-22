@@ -153,6 +153,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="abiity_gorilla.cpp" />
     <ClCompile Include="abiity_rabbit.cpp" />
     <ClCompile Include="ability_bird.cpp" />
     <ClCompile Include="block.cpp" />
