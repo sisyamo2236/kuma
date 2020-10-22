@@ -1,18 +1,18 @@
 #pragma once
-#ifndef ABILITY_RABBIT_H
-#define ABILITY_RABBIT_H
+#ifndef ABILITY_BIRD_H
+#define ABILITY_BIRD_H
 
 #include "ability.h"
 #include "chichan.h"
 
-class ability_rabbit : public ability {
+class ability_bird : public ability {
 
 private:
 
 
 public:
-	ability_rabbit();
-	~ability_rabbit();
+	ability_bird();
+	~ability_bird();
 	//ƒAƒNƒVƒ‡ƒ“
 	void Action(chichan* pChichan);
 };

@@ -6,23 +6,21 @@
 #include "player.h"
 #include "config.h"
 #include "doll.h"
-#include "ability.h"
 
 #define GRAVITY_SCALE (5.0f)
 #define PLAYER_SIZE (100.0f)
+
+class ability;
 
 class chichan :public player {
 
 private:
 	bool AvailableAbility[DOLLTYPE_MAX];//使用可能アビリティ
-	ability* pAbility[DOLLTYPE_MAX];
-
 	void AbilityAction();
 
 public:
+	ability* pAbility[DOLLTYPE_MAX];
 
-
-	//chichan();
 	chichan(D3DXVECTOR2 set_pos);
 	~chichan();
 

@@ -38,6 +38,9 @@ public:
 	//ゲッター
 	int Getlife();
 	D3DXVECTOR2 GetPos();
+	D3DXVECTOR2 GetPastPos();
+	D3DXVECTOR2 GetVectorSpeed();
+	bool GetisJump();
 
 	//移動処理
 	void moveX(float num);
@@ -61,9 +64,13 @@ public:
 	void JumpFlagOff();
 
 	//パラメータ操作
-	void LifeControll(int num);
+	void LifeControll(int num);//lifeにnumで足し算する
+	void VectorSpeedY_Maltiplication(float num);//vectorspeedにnumで掛け算する
 
-	float jump_currect;
+	//パラメータ補正値
+	float jump_correct;
+	float gravity_correct;
+
 };
 
 #endif

@@ -54,7 +54,7 @@ private:
 	chichan* pChichan;
 	block_manager* pBlock_manager;
 	Judge* pJudge;
-	doll* pDoll;
+	doll* pDoll[DOLLTYPE_MAX];
 
 public:
 

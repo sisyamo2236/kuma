@@ -154,6 +154,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="abiity_rabbit.cpp" />
+    <ClCompile Include="ability_bird.cpp" />
     <ClCompile Include="block.cpp" />
     <ClCompile Include="block_manager.cpp" />
     <ClCompile Include="chichan.cpp" />
@@ -177,6 +178,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ability.h" />
+    <ClInclude Include="ability_bird.h" />
     <ClInclude Include="ability_rabbit.h" />
     <ClInclude Include="block.h" />
     <ClInclude Include="block_manager.h" />

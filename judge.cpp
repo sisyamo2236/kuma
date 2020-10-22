@@ -49,16 +49,19 @@ void Judge::JudgePlayerandBlock(chichan* pPlayer, block_manager* pBlock_manager)
 			&& pBlock->GetPos().y <= pPlayer->GetPos().y + (PLAYER_SIZE) && pPlayer->GetPos().y <= pBlock->GetPos().y + (BLOCK_HEIGHT)) {
 
 			//ƒuƒƒbƒN‚Æ‚Ìã‚ÅˆÚ“®‚·‚é‚½‚ß‚ÌðŒŽ®
-			if (pBlock->GetPos().y >= pPlayer->GetPos().y + (PLAYER_SIZE)) {
+			if (pBlock->GetPos().y >= pPlayer->GetPos().y + (PLAYER_SIZE) - 10) {
 
 				pPlayer->ChangePosY();
 				pPlayer->JumpFlagOn();
 			}
-			else if (pBlock->GetPos().y + (BLOCK_HEIGHT) <= pPlayer->GetPos().y + (PLAYER_SIZE))
+			//‰º‚©‚ç‚Ô‚Â‚©‚Á‚½Žž‚Ì”»’è
+			else if (pBlock->GetPos().x <= pPlayer->GetPastPos().x + PLAYER_SIZE && pPlayer->GetPastPos().x <= pBlock->GetPos().x + (BLOCK_WIDTH))
 			{
+
 				pPlayer->ChangePosY();
-				pPlayer->ChangePosX();
+
 			}
+			//‚»‚Ì‘¼(‰¡‚©‚ç‚Ô‚Â‚©‚Á‚½Žž)
 			else
 			{
 				pPlayer->ChangePosX();

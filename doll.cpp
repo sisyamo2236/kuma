@@ -34,9 +34,7 @@ void doll::Draw() {
 
 	sprite Sprite;
 
-	//ƒuƒƒbƒN‚Ì•`‰æ
 	Sprite.Sprite_Draw(TexId, pos.x, pos.y, DOLL_WIDTH, DOLL_HEIGHT);
-
 
 }
 

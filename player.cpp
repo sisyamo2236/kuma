@@ -34,7 +34,8 @@ player::player() {
 	life = 1;
 	speed = PLAYER_SPEED;
 	isJump = true;
-	jump_currect = 1.0;
+	jump_correct = 1.0f;
+	gravity_correct = 1.0f;
 }
 
 // ---------------------------------------------------------------------------
@@ -58,7 +59,8 @@ player::player(D3DXVECTOR2 s_pos) {
 	life = 1;
 	speed = PLAYER_SPEED;
 	isJump = true;
-	jump_currect = 1.0;
+	jump_correct = 1.0f;
+	gravity_correct = 1.0f;
 }
 
 // ---------------------------------------------------------------------------
@@ -92,9 +94,14 @@ void player::Update() {
 
 	//移動の補正
 	if (pos.y > DOWN_LIMIT) {
-		pos.y = past_pos.y;
-		
+		//pos.y = past_pos.y;
+		pos.y = DOWN_LIMIT;
+
 	}
+	//下降しているときはisJumpをtrueにする(空中でジャンプできてしまうことの防止)
+	if (vector_speed.y > 0 && pos.y < DOWN_LIMIT) isJump = true;
+
+
 	vector_speed.x = 0.0f;
 
 }
@@ -125,6 +132,28 @@ int player::Getlife() {
 }
 
 // ---------------------------------------------------------------------------
+// 関数名:	GetisJump 
+// 引数:	void
+// 戻り値:  isJump
+// 説明:	プレイヤーのジャンプフラグ取得
+// ---------------------------------------------------------------------------
+bool player::GetisJump() {
+
+	return isJump;
+}
+
+// ---------------------------------------------------------------------------
+// 関数名:	GetVectorSpeed
+// 引数:	void
+// 戻り値:  vector_speed
+// 説明:	プレイヤーの速度取得
+// ---------------------------------------------------------------------------
+D3DXVECTOR2 player::GetVectorSpeed() {
+
+	return vector_speed;
+}
+
+// ---------------------------------------------------------------------------
 // 関数名:	LifeControll(int num)
 // 引数:	int
 // 戻り値:  なし
@@ -134,6 +163,18 @@ void player::LifeControll(int num) {
 
 	life += num;
 }
+
+// ---------------------------------------------------------------------------
+// 関数名:	VectorSpeedY_Maltiplication(float num)
+// 引数:	num
+// 戻り値:  なし
+// 説明:	プレイヤーの速度操作(numをかける)
+// ---------------------------------------------------------------------------
+void player::VectorSpeedY_Maltiplication(float num) {
+
+	vector_speed.y *= num;
+}
+
 
 // ---------------------------------------------------------------------------
 // 関数名:	void moveX( void )
@@ -172,6 +213,18 @@ D3DXVECTOR2 player::GetPos() {
 }
 
 // ---------------------------------------------------------------------------
+// 関数名:	D3DXVECTOR2 GetPastPos( void )
+// 引数:	void
+// 戻り値:  past_pos
+// 説明:	プレイヤーの１フレーム前ポジション取得関数
+// ---------------------------------------------------------------------------
+D3DXVECTOR2 player::GetPastPos() {
+
+	return past_pos;
+
+}
+
+// ---------------------------------------------------------------------------
 // 関数名:	void PlayerGravity( void )
 // 引数:	void
 // 戻り値:  なし
@@ -182,7 +235,7 @@ void player::PlayerGravity() {
 	
 	if (pos.y < DOWN_LIMIT) {
 		if (vector_speed.y < GRAVITY_SCALE) {
-			vector_speed.y += GRAVITY_SCALE;
+			vector_speed.y += GRAVITY_SCALE * gravity_correct;
 
 		}
 
@@ -192,6 +245,7 @@ void player::PlayerGravity() {
 		isJump = false;
 	}
 
+	
 }
 
 // ---------------------------------------------------------------------------
@@ -213,7 +267,7 @@ void player::Player_Z_Action() {
 // ---------------------------------------------------------------------------
 void player::Jump() {
 
-	vector_speed.y -= (JUMP_POWER + JUMP_CORRECT) * jump_currect;
+	vector_speed.y -= (JUMP_POWER + JUMP_CORRECT) * jump_correct;
 	isJump = true;
 }
 

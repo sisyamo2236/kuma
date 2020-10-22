@@ -22,6 +22,12 @@
     <Filter Include="ヘッダー ファイル\基底クラス">
       <UniqueIdentifier>{5e51ba1e-2490-48f4-aa73-d028b131517d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\アビリティ">
+      <UniqueIdentifier>{fd4dfc19-5d27-4c15-8fe9-07097c1b5f53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\アビリティ">
+      <UniqueIdentifier>{5a6c0ae0-7ad2-4182-96a1-cd3a359059dc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -85,7 +91,10 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="abiity_rabbit.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\アビリティ</Filter>
+    </ClCompile>
+    <ClCompile Include="ability_bird.cpp">
+      <Filter>ソース ファイル\アビリティ</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -156,7 +165,10 @@
       <Filter>ヘッダー ファイル\基底クラス</Filter>
     </ClInclude>
     <ClInclude Include="ability_rabbit.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>ヘッダー ファイル\アビリティ</Filter>
+    </ClInclude>
+    <ClInclude Include="ability_bird.h">
+      <Filter>ヘッダー ファイル\アビリティ</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

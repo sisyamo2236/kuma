@@ -4,7 +4,7 @@
 #include "sprite.h"
 #include "debug_font.h"
 #include "ability_rabbit.h"
-
+#include "ability_bird.h"
 #include <stdio.h>
 #include "game.h"
 
@@ -57,6 +57,8 @@ void chichan::GetAbility(int ability_num) {
 
 	case BIRD:
 
+		pAbility[ability_num] = new ability_bird;
+
 		break;
 
 	}
@@ -98,17 +100,22 @@ void chichan::Update() {
 	//重力による加速
 	PlayerGravity();
 
+	//アビリティアクション
+	AbilityAction();
+
 	//移動
 	pos += vector_speed;
 
 	//移動の補正
 	if (pos.y > DOWN_LIMIT) {
-		pos.y = past_pos.y;
+		pos.y = DOWN_LIMIT;
 
 	}
-	vector_speed.x = 0.0f;
 
-	AbilityAction();
+	//下降しているときはisJumpをtrueにする(空中でジャンプできてしまうことの防止)
+	if (vector_speed.y > 0 && pos.y < DOWN_LIMIT) isJump = true;
+
+	vector_speed.x = 0.0f;
 
 }
 

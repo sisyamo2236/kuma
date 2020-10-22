@@ -13,7 +13,7 @@
 #include "debug_primitive.h"
 #include "block.h"
 #include "chichan.h"
-
+#include "doll.h"
 
 	game::game() {
 
@@ -33,8 +33,6 @@
 		pChichan = new chichan(D3DXVECTOR2(SCREEN_WIDTH / 6, SCREEN_HEIGHT - 300));
 		pJudge = new Judge();
 		pBlock_manager = new block_manager();
-		pDoll = new doll(D3DXVECTOR2(SCREEN_WIDTH / 3, SCREEN_HEIGHT - 300),RABBIT);
-
 
 		//ブロック仮設置
 		pBlock_manager->SetBlock(SCREEN_WIDTH / 2, SCREEN_HEIGHT - 100);
@@ -43,6 +41,18 @@
 		//pBlock_manager->SetBlock(SCREEN_WIDTH / 2, SCREEN_HEIGHT - 350);
 		pBlock_manager->SetBlock((SCREEN_WIDTH / 2) + 100.0f, SCREEN_HEIGHT - 350);
 	
+
+		//アビリティ関連
+
+		//一時的処理　アビリティ取得条件により変更
+		for (int i = 0; i < DOLLTYPE_MAX; i++) {
+			pDoll[i] = NULL;
+
+		}
+		pDoll[RABBIT] = new doll(D3DXVECTOR2(SCREEN_WIDTH - 100, SCREEN_HEIGHT - 300), RABBIT);
+		pDoll[BIRD] = new doll(D3DXVECTOR2(SCREEN_WIDTH - 200, SCREEN_HEIGHT - 300), BIRD);
+
+
 	}
 
 
@@ -68,7 +78,16 @@
 
 		//オブジェクト
 		pChichan->Update();
-		pJudge->Judge_Update(pChichan, pBlock_manager,pDoll);
+
+		//一時的処理　アビリティ取得条件により変更
+		for (int i = 0; i < DOLLTYPE_MAX; i++) {
+			if (pDoll[i] != NULL) {
+				pJudge->Judge_Update(pChichan, pBlock_manager, pDoll[i]);
+			}
+		}
+		//pJudge->Judge_Update(pChichan, pBlock_manager,pDoll);
+
+
 
 		return 0;
 	}
@@ -81,6 +100,14 @@
 		//オブジェクト
 		pChichan->Draw();
 		pBlock_manager->Draw();
-		pDoll->Draw();
 
+
+
+
+		//一時的処理　アビリティ取得条件により変更
+		for (int i = 0; i < DOLLTYPE_MAX; i++) {
+			if (pDoll[i] != NULL) {
+				pDoll[i]->Draw();
+			}
+		}
 	}
